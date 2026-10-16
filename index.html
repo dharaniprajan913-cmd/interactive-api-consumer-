@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Weather App | SkyCast</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <main class="weather-app">
+
+    <header class="header">
+      <div class="brand-icon">☀</div>
+      <p class="eyebrow">LIVE WEATHER UPDATES</p>
+      <h1>Weather <span>App</span></h1>
+      <p class="subtitle">Discover the weather in your city</p>
+    </header>
+
+    <form id="weatherForm" class="search-box">
+      <span class="search-icon">⌖</span>
+      <input
+        type="text"
+        id="cityInput"
+        placeholder="Enter city name..."
+        aria-label="Enter city name"
+        autocomplete="off"
+        required
+      >
+      <button id="searchBtn" type="submit">
+        <span>⌕</span> Search
+      </button>
+    </form>
+
+    <div id="status" class="status" role="status" aria-live="polite">
+      <span class="status-dot"></span>
+      Enter a city to check its weather.
+    </div>
+
+    <section id="weatherCard" class="weather-card" hidden>
+
+      <div class="weather-top">
+        <div class="location">
+          <span class="pin">●</span>
+          <div>
+            <h2 id="cityName">Chennai, India</h2>
+            <p id="localTime">Local weather</p>
+          </div>
+        </div>
+
+        <div class="live-badge">
+          <span class="live-dot"></span>
+          LIVE
+        </div>
+      </div>
+
+      <div class="main-weather">
+        <div class="weather-visual">
+          <span id="weatherIcon">⛅</span>
+        </div>
+
+        <div class="temperature-area">
+          <div class="temperature">
+            <span id="temperature">--</span><sup>°C</sup>
+          </div>
+          <p id="condition" class="condition">Loading weather...</p>
+          <p class="feels-like">
+            Feels like <strong id="feelsLike">--</strong>°C
+          </p>
+        </div>
+      </div>
+
+      <div class="weather-divider"></div>
+
+      <div class="details">
+        <article class="detail-box">
+          <div class="detail-heading">
+            <span class="detail-icon humidity-icon">♧</span>
+            <span>Humidity</span>
+          </div>
+          <strong id="humidity">--%</strong>
+          <p>Relative humidity</p>
+          <div class="mini-bar">
+            <span id="humidityBar"></span>
+          </div>
+        </article>
+
+        <article class="detail-box">
+          <div class="detail-heading">
+            <span class="detail-icon wind-icon">≋</span>
+            <span>Wind speed</span>
+          </div>
+          <strong><span id="windSpeed">--</span> <small>km/h</small></strong>
+          <p>Current wind</p>
+          <div class="mini-bar">
+            <span id="windBar"></span>
+          </div>
+        </article>
+      </div>
+
+      <div class="observation">
+        <span class="clock-icon">◷</span>
+        <div>
+          <p>Last weather observation</p>
+          <strong id="updatedAt">--</strong>
+        </div>
+      </div>
+
+    </section>
+
+    <footer>
+      <div class="footer-line"></div>
+      <p><span>✦</span> Weather data powered by Open-Meteo API</p>
+      <p class="footer-note">CHECK TODAY · PLAN TOMORROW</p>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
